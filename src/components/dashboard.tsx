@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ProjectCard } from '@/components/project-card';
+import { AgentsPanel } from '@/components/agents-panel';
 import { Project, ProjectData, ViewMode } from '@/types/project';
 import { LayoutGrid, List, Rocket, Pause, CheckCircle } from 'lucide-react';
 
@@ -98,6 +99,9 @@ export function Dashboard({ initialData }: DashboardProps) {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        {/* Agents Panel */}
+        <AgentsPanel />
+        
         {viewMode === 'kanban' ? (
           <KanbanView 
             activeProjects={activeProjects}
